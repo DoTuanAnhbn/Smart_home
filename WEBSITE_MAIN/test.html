@@ -1,0 +1,48 @@
+<div class="appliance door" id="appliance_Door">
+  <input type="checkbox" name="a" id="door" class="i">
+  <label for="lamp">
+    <i class="drying-icon"></i>
+    <input type="range" min="1" max="100" value="50" class="slider" id="slider_lamp">
+    <div>
+      <h5 class="min" id="min_lamp"></h5>
+      <h5 class="max" id="max_lamp"></h5>
+      <h4 class="value" id="value_lamp"></h4>
+    </div>
+    <div>
+      <strong>Door</strong>
+    </div>
+    <span data-o="opened" data-c="closed"></span>
+    <small></small>
+  </label>
+</div>
+<style>
+.drying-icon {
+  width: 150px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.drying-icon:after {
+  content: '';
+  width: 10px;
+  height: 80px;
+  background: #3976f6;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.drying-icon::before {
+  content: '';
+  width: 130px;
+  height: 5px;
+  background-color: #3976f6;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+</style>

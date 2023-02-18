@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="smart_home.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700"/>
+  <title>Document</title>
+</head>
+<body>
+  <div class="dashboard">
+    <header>
+      <div class="f fe">
+        <div class="icon icon-w"></div>
+        <div class="heading">
+          <h5 class="date">6 Feb 2023</h5>
+          <h3 class="title">Good morning</h3>
+        </div>
+      </div>  
+      <div class="weather f">
+        <div>
+          <strong>20°C</strong>
+          <p>Indoor Temp</p>
+        </div>
+        <div>
+          <strong>16°C</strong>
+          <p>Outdoor Temp</p>
+        </div>
+        <div>
+          <strong>52.00%</strong>
+          <p>Indoor Humidity</p>
+        </div>
+        <div>
+          <strong>95.00%</strong>
+          <p>Outdoor Humidity</p>
+        </div>
+      </div>
+    </header>
+    <section>
+    <!-- Category -->
+      <div class="category">
+        <ul>
+          <li><a href="livingroom.html">Living Room</a></li>
+          <li><a href="kitchen.html">Kitchen</a></li>
+          <li><a href="bathroom.html" class="active">Bathroom</a></li>
+          <li><a href="bedroom.html">Bedroom</a></li>
+          <li><a href="readingroom.html">Reading Room</a></li>
+          <li><a style="color: #f6f8fa;">.</a></li>
+        </ul>
+      </div>
+    <!-- Appliances -->
+      <div class="appliances">
+        
+        <div class="appliance">
+          <input type="checkbox" name="a" id="a" class="i">
+          <label for="a">
+            <i class="l"></i>
+            <input type="range" min="1" max="100" value="50" class="slider" id="slider_lamp">
+            <div>
+              <h5 class="min" id="min_lamp"></h5>
+              <h5 class="max" id="max_lamp"></h5>
+              <h4 class="value" id="value_lamp"></h4>
+            </div>
+            <div>
+              <strong>Lamp</strong>
+            </div>
+            <span data-o="opened" data-c="closed"></span>
+            <small></small>
+          </label>
+        </div>
+        
+        <div class="appliance">
+          <input type="checkbox" name="a" id="b" class="i">
+          <label for="b">
+            <i class="heater-icon"></i>
+            <strong>Heater</strong>
+            <span data-o="opened" data-c="closed"></span>
+            <small></small>
+          </label>
+        </div>
+        
+        <div class="m-player">
+          <h2>Shared Devices</h2>
+          <div class="player">
+            <div class="disc"></div>
+            <div class="artist">
+              <p>Rosetta Stoned</p>
+              <small>Tool</small>
+            </div>
+            <div class="controls">
+              <input type="checkbox" name="a" id="p">
+              <label for="p">
+                <div class="control"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  </div>
+  <script src="./smart_home.js"></script>
+</body>
+</html>

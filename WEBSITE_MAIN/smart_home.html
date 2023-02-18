@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="smart_home.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700"/>
+  <title>Document</title>
+</head>
+<body>
+  <div class="dashboard">
+    <header>
+      <div class="f fe">
+        <div class="icon icon-w"></div>
+        <div class="heading">
+          <h5 class="date" id="time"></h5>
+          <h3 class="title" id="title"></h3>
+          <h3 class="title clock" id="clock"></h3>
+
+        </div>
+      </div>  
+      <div class="weather f">
+          <div>
+            <strong id="in_temp">20</strong>
+            <strong>°C</strong>
+            <p>Indoor Temp</p>
+          </div>
+          <div>
+            <strong id="out_temp">16</strong>
+            <strong>°C</strong>
+            <p>Outdoor Temp</p>
+          </div>
+          <div>
+            <strong id="in_humi">52.00</strong>
+            <strong>%</strong>
+            <p>Indoor Humidity</p>
+          </div>
+          <div>
+            <strong id="out_humi">95.00</strong>
+            <strong>%</strong>
+            <p>Outdoor Humidity</p>
+          </div>
+      </div>
+    </header>
+    <section>
+    <!-- Category -->
+      <div class="category">
+        <ul>
+          <li><a onclick="outside()" id="outside" class="active">Outside</a></li>
+          <li><a onclick="livingroom()" id="livingroom">Living Room</a></li>
+          <li><a onclick="kitchen()" id="kitchen">Kitchen</a></li>
+          <li><a onclick="bathroom()" id="bathroom">Bathroom</a></li>
+          <li><a onclick="bedroom()" id="bedroom">Bedroom</a></li>
+          <li><a onclick="readingroom()" id="readingroom">Reading Room</a></li>
+          <li><a onclick="dryingroom()" id="dryingroom">Drying room</a></li>
+          <li><a style="color: #f6f8fa;">.</a></li>
+        </ul>
+      </div>
+    <!-- Appliances -->
+      <div class="appliances">
+        
+        <div class="appliance Lamp" id="appliance_Lamp">
+          <input type="checkbox" name="a" id="lamp" class="i">
+          <label for="lamp">
+            <i class="l"></i>
+            <input type="range" min="1" max="100" value="50" class="slider" id="slider_lamp">
+            <div>
+              <h5 class="min" id="min_lamp"></h5>
+              <h5 class="max" id="max_lamp"></h5>
+              <h4 class="value" id="value_lamp"></h4>
+            </div>
+            <div>
+              <strong>Lamp</strong>
+            </div>
+            <span data-o="opened" data-c="closed"></span>
+            <small></small>
+          </label>
+        </div>
+        
+        <div class="appliance Fridge" id="appliance_Fridge">
+          <input type="checkbox" name="a" id="fridge" class="i">
+          <label for="fridge">
+            <i class="f"></i>
+            <input type="range" min="0" max="20" value="0" class="slider" id="slider_fridge">
+            <div>
+              <h5 class="min" id="min_fridge"></h5>
+              <h5 class="max" id="max_fridge"></h5>
+              <h4 class="value" id="value_fridge"></h4>
+            </div>
+            <div>
+              <strong>Fridge</strong>
+            </div>
+            <span data-o="opened" data-c="closed"></span>
+            <small></small>
+          </label>
+        </div>
+
+        <div class="appliance Curtain" id="appliance_Curtain">
+          <input type="checkbox" name="a" id="curtain" class="i">
+          <label for="curtain">
+            <i class="curtain-icon"></i>
+            <strong>Curtain</strong>
+            <span data-o="opened" data-c="closed"></span>
+            <small></small>
+          </label>
+        </div>
+
+        <div class="appliance Speaker" id="appliance_Speaker">
+          <input type="checkbox" name="a" id="speaker" class="i">
+          <label for="speaker">
+            <i class="speaker-icon"></i>
+            <strong>Speaker</strong>
+            <span data-o="opened" data-c="closed"></span>
+            <small></small>
+          </label>
+        </div>
+
+        <div class="appliance Fan" id="appliance_Fan">
+          <input type="checkbox" name="a" id="fan" class="i">
+          <label for="fan">
+            <i class="fan-icon"></i>
+            <input type="range" min="1" max="3" value="0" class="slider" id="slider_fan">
+            <div>
+              <h5 class="min" id="min_fan">1</h5>
+              <h5 class="max small" id="max_fan">3</h5>
+              <h4 class="value" id="value_fan"></h4>
+            </div>
+            <strong>Fan</strong>
+            <span data-o="opened" data-c="closed"></span>
+            <small></small>
+          </label>
+        </div>
+        
+        <div class="appliance Air" id="appliance_Air">
+          <input type="checkbox" name="a" id="air" class="i">
+          <label for="air">
+            <i class="a"></i>
+            <input type="range" min="16" max="30" value="20" class="slider" id="slider_air">
+            <div>
+              <h5 class="min" id="min_air">16</h5>
+              <h5 class="max" id="max_air">30</h5>
+              <h4 class="value" id="value_air"></h4>
+            </div>
+            <strong>Air</strong>
+            <span data-o="opened" data-c="closed"></span>
+            <small></small>
+          </label>
+        </div>
+        
+        <div class="appliance Tivi" id="appliance_Tivi">
+          <input type="checkbox" name="a" id="tivi" class="i">
+          <label for="tivi">
+            <i class="tivi-icon"></i>
+            <strong>Tivi</strong>
+            <span data-o="opened" data-c="closed"></span>
+            <small></small>
+          </label>
+        </div>
+
+        <div class="appliance Heater" id="appliance_Heater">
+          <input type="checkbox" name="a" id="heater" class="i">
+          <label for="heater">
+            <i class="heater-icon"></i>
+            <strong>Heater</strong>
+            <span data-o="opened" data-c="closed"></span>
+            <small></small>
+          </label>
+        </div>
+        
+        <div class="appliance Vacuum" id="appliance_Vacuum">
+          <input type="checkbox" name="a" id="vacuum" class="i">
+          <label for="vacuum">
+            <i class="vacuum-icon"></i>
+            <strong>Vacuum</strong>
+            <span data-o="opened" data-c="closed"></span>
+            <small></small>
+          </label>
+        </div>
+
+        <div class="appliance Door" id="appliance_Door">
+          <input type="checkbox" name="a" id="door" class="i">
+          <label for="door">
+            <i class="door-icon"></i>
+            <div>
+              <strong>Door</strong>
+            </div>
+            <span data-o="opened" data-c="closed"></span>
+            <small></small>
+          </label>
+        </div>
+
+        <div class="appliance Drying" id="appliance_Drying">
+          <input type="checkbox" name="a" id="drying" class="i">
+          <label for="drying">
+            <i class="drying-icon"></i>
+            <div>
+              <strong>Drying</strong>
+            </div>
+            <span data-o="opened" data-c="closed"></span>
+            <small></small>
+          </label>
+        </div>
+        
+        <div class="m-player">
+          <h2>Shared Devices</h2>
+          <div class="player">
+            <div class="disc"></div>
+            <div class="artist">
+              <p>Rosetta Stoned</p>
+              <small>Tool</small>
+            </div>
+            <div class="controls">
+              <input type="checkbox" name="a" id="p">
+              <label for="p">
+                <div class="control"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="./smart_home.js"></script>
+  <script type="module" src="./smart_home_getdata.js"></script>
+  <script type="module" src="./smart_home_updatedata.js"></script>
+</body>
+</html>
